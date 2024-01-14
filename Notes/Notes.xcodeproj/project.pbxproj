@@ -3,23 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3837B5C12B540FA80070BE11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5C02B540FA80070BE11 /* AppDelegate.swift */; };
-		3837B5C52B540FA80070BE11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5C42B540FA80070BE11 /* ViewController.swift */; };
+		3837B5C52B540FA80070BE11 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5C42B540FA80070BE11 /* NotesListViewController.swift */; };
 		3837B5CA2B540FA90070BE11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3837B5C92B540FA90070BE11 /* Assets.xcassets */; };
 		3837B5CD2B540FA90070BE11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3837B5CB2B540FA90070BE11 /* LaunchScreen.storyboard */; };
+		3837B5DA2B541A5A0070BE11 /* SimpleNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5D92B541A5A0070BE11 /* SimpleNoteTableViewCell.swift */; };
+		3837B5DD2B541A760070BE11 /* ImageNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5DC2B541A760070BE11 /* ImageNoteTableViewCell.swift */; };
+		3837B5E32B5421F60070BE11 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3837B5E22B5421F60070BE11 /* SnapKit */; };
+		3837B5E92B5439060070BE11 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5E82B5439060070BE11 /* Note.swift */; };
+		3837B5EF2B5439C70070BE11 /* NotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5EE2B5439C70070BE11 /* NotesListViewModel.swift */; };
+		3837B5F32B543B030070BE11 /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5F22B543B030070BE11 /* TableViewSection.swift */; };
+		3837B5F62B54414B0070BE11 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5F52B54414B0070BE11 /* UIColor+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3837B5BD2B540FA80070BE11 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3837B5C02B540FA80070BE11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3837B5C42B540FA80070BE11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3837B5C42B540FA80070BE11 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
 		3837B5C92B540FA90070BE11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3837B5CC2B540FA90070BE11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3837B5CE2B540FA90070BE11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3837B5D92B541A5A0070BE11 /* SimpleNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNoteTableViewCell.swift; sourceTree = "<group>"; };
+		3837B5DC2B541A760070BE11 /* ImageNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNoteTableViewCell.swift; sourceTree = "<group>"; };
+		3837B5E82B5439060070BE11 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		3837B5EE2B5439C70070BE11 /* NotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewModel.swift; sourceTree = "<group>"; };
+		3837B5F22B543B030070BE11 /* TableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
+		3837B5F52B54414B0070BE11 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3837B5E32B5421F60070BE11 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,12 +67,58 @@
 			isa = PBXGroup;
 			children = (
 				3837B5C02B540FA80070BE11 /* AppDelegate.swift */,
-				3837B5C42B540FA80070BE11 /* ViewController.swift */,
+				3837B5F22B543B030070BE11 /* TableViewSection.swift */,
+				3837B5ED2B54397B0070BE11 /* NotesList */,
+				3837B5F82B54417F0070BE11 /* Extensions */,
 				3837B5C92B540FA90070BE11 /* Assets.xcassets */,
 				3837B5CB2B540FA90070BE11 /* LaunchScreen.storyboard */,
 				3837B5CE2B540FA90070BE11 /* Info.plist */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		3837B5E52B5438E20070BE11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3837B5C42B540FA80070BE11 /* NotesListViewController.swift */,
+				3837B5D92B541A5A0070BE11 /* SimpleNoteTableViewCell.swift */,
+				3837B5DC2B541A760070BE11 /* ImageNoteTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3837B5E62B5438F00070BE11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3837B5EE2B5439C70070BE11 /* NotesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3837B5EB2B5439600070BE11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3837B5E82B5439060070BE11 /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3837B5ED2B54397B0070BE11 /* NotesList */ = {
+			isa = PBXGroup;
+			children = (
+				3837B5EB2B5439600070BE11 /* Model */,
+				3837B5E62B5438F00070BE11 /* ViewModel */,
+				3837B5E52B5438E20070BE11 /* View */,
+			);
+			path = NotesList;
+			sourceTree = "<group>";
+		};
+		3837B5F82B54417F0070BE11 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3837B5F52B54414B0070BE11 /* UIColor+Ex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +137,9 @@
 			dependencies = (
 			);
 			name = Notes;
+			packageProductDependencies = (
+				3837B5E22B5421F60070BE11 /* SnapKit */,
+			);
 			productName = Notes;
 			productReference = 3837B5BD2B540FA80070BE11 /* Notes.app */;
 			productType = "com.apple.product-type.application";
@@ -104,6 +167,9 @@
 				Base,
 			);
 			mainGroup = 3837B5B42B540FA80070BE11;
+			packageReferences = (
+				3837B5E12B5421F60070BE11 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3837B5BE2B540FA80070BE11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,8 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3837B5C52B540FA80070BE11 /* ViewController.swift in Sources */,
+				3837B5F62B54414B0070BE11 /* UIColor+Ex.swift in Sources */,
+				3837B5F32B543B030070BE11 /* TableViewSection.swift in Sources */,
+				3837B5E92B5439060070BE11 /* Note.swift in Sources */,
+				3837B5C52B540FA80070BE11 /* NotesListViewController.swift in Sources */,
 				3837B5C12B540FA80070BE11 /* AppDelegate.swift in Sources */,
+				3837B5DA2B541A5A0070BE11 /* SimpleNoteTableViewCell.swift in Sources */,
+				3837B5EF2B5439C70070BE11 /* NotesListViewModel.swift in Sources */,
+				3837B5DD2B541A760070BE11 /* ImageNoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +395,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3837B5E12B5421F60070BE11 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3837B5E22B5421F60070BE11 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3837B5E12B5421F60070BE11 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3837B5B52B540FA80070BE11 /* Project object */;
 }
