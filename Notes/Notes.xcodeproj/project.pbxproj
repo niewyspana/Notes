@@ -18,6 +18,7 @@
 		3837B5EF2B5439C70070BE11 /* NotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5EE2B5439C70070BE11 /* NotesListViewModel.swift */; };
 		3837B5F32B543B030070BE11 /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5F22B543B030070BE11 /* TableViewSection.swift */; };
 		3837B5F62B54414B0070BE11 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5F52B54414B0070BE11 /* UIColor+Ex.swift */; };
+		3837B5FC2B547C850070BE11 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B5FB2B547C850070BE11 /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3837B5EE2B5439C70070BE11 /* NotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewModel.swift; sourceTree = "<group>"; };
 		3837B5F22B543B030070BE11 /* TableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
 		3837B5F52B54414B0070BE11 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		3837B5FB2B547C850070BE11 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				3837B5C02B540FA80070BE11 /* AppDelegate.swift */,
 				3837B5F22B543B030070BE11 /* TableViewSection.swift */,
+				3837B5FE2B547CC50070BE11 /* Note */,
 				3837B5ED2B54397B0070BE11 /* NotesList */,
 				3837B5F82B54417F0070BE11 /* Extensions */,
 				3837B5C92B540FA90070BE11 /* Assets.xcassets */,
@@ -119,6 +122,22 @@
 				3837B5F52B54414B0070BE11 /* UIColor+Ex.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3837B5FE2B547CC50070BE11 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				3837B5FF2B547CE00070BE11 /* ViewController */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		3837B5FF2B547CE00070BE11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3837B5FB2B547C850070BE11 /* NoteViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +219,7 @@
 				3837B5F32B543B030070BE11 /* TableViewSection.swift in Sources */,
 				3837B5E92B5439060070BE11 /* Note.swift in Sources */,
 				3837B5C52B540FA80070BE11 /* NotesListViewController.swift in Sources */,
+				3837B5FC2B547C850070BE11 /* NoteViewController.swift in Sources */,
 				3837B5C12B540FA80070BE11 /* AppDelegate.swift in Sources */,
 				3837B5DA2B541A5A0070BE11 /* SimpleNoteTableViewCell.swift in Sources */,
 				3837B5EF2B5439C70070BE11 /* NotesListViewModel.swift in Sources */,
