@@ -13,6 +13,7 @@ class NotesListViewController: UITableViewController {
     
     var viewModel: NotesListViewModelProtocol?
     
+    
     // MARK: - Life cycle
     
     override func viewDidLoad() {
@@ -20,6 +21,8 @@ class NotesListViewController: UITableViewController {
         title = "Notes"        
         setupTableView()
         setupToolBar()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

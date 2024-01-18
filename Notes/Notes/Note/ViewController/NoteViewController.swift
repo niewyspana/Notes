@@ -55,15 +55,10 @@ final class NoteViewController: UIViewController {
     // MARK: - Private methods
     
     @objc
-    private func saveAction() {
-        
-    }
+    private func saveAction() { }
     
     @objc
-    private func deleteAction() {
-        
-    }
-
+    private func deleteAction() { }
     
     private func setupUI() {
         view.addSubview(attachmentView)
@@ -107,8 +102,22 @@ final class NoteViewController: UIViewController {
     
     private func setupBars() {
         let trashButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteAction))
-        setToolbarItems([trashButton], animated: true)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAction))
+        
+        let addImageButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addImageAction))
+        let categoryButton = UIBarButtonItem(title: "Category", style: .plain, target: self, action: #selector(selectCategoryAction))
+        
+        setToolbarItems([trashButton, addImageButton, categoryButton], animated: true)
+    }
+    
+    @objc
+    private func addImageAction() {
+        print("Add Image Button Pressed")
+    }
+    
+    @objc
+    private func selectCategoryAction() {
+        print("Select Category Button Pressed")
     }
 }
