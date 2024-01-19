@@ -29,11 +29,11 @@ enum NoteCategory: String {
 
 struct Note: TableViewItemProtocol {
     let title: String
-    let description: String
+    let description: String?
     let date: Date
-    let imageUrl: String?
+    let imageURL: URL?
     let category: NoteCategory
-    let image: Data?
+    let image: Data? = nil
     
     var categoryColor: UIColor {
         return category.color

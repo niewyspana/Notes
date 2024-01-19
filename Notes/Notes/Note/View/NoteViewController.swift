@@ -16,7 +16,6 @@ final class NoteViewController: UIViewController {
         let view = UIImageView()
         
         view.layer.cornerRadius = 10
-        view.image = UIImage(named: "mockImage")
         view.layer.masksToBounds = true
         view.contentMode = .scaleAspectFill
         
@@ -32,10 +31,15 @@ final class NoteViewController: UIViewController {
         return view
     }()
     
+    
+    // MARk: - Properties
+    var viewModel: NoteViewModelProtocol?
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configure()
         setupUI()
     }
     
@@ -46,24 +50,37 @@ final class NoteViewController: UIViewController {
     }
     
     // MARK: - Methods
-    func set(note: Note) {
-        textView.text = note.title + " " + note.description
-        guard let imageData = note.image, let image = UIImage(data: imageData) else { return }
-        attachmentView.image = image
+    
+    
+    private func configure() {
+        textView.text = viewModel?.text
+        //   guard let imageData = note.image, let image = UIImage(data:
+        // imageData) else { return }
+        //  attachmentView.image = image
     }
     
     // MARK: - Private methods
     
     @objc
-    private func saveAction() { }
+    private func saveAction() {
+        viewModel?.save(with: textView.text)
+        navigationController?.popViewController(animated: true)
+        updateBarButtonItems()
+    }
     
     @objc
-    private func deleteAction() { }
+    private func deleteAction() {
+        viewModel?.delete()
+        navigationController?.popViewController(animated: true)
+        updateBarButtonItems()
+    }
     
     private func setupUI() {
         view.addSubview(attachmentView)
         view.addSubview(textView)
         view.backgroundColor = .white
+        
+        textView.delegate = self
         
         let recogniser = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(recogniser)
@@ -73,6 +90,7 @@ final class NoteViewController: UIViewController {
         setupConstraints()
         setImageHeight()
         setupBars()
+        updateBarButtonItems()
     }
     
     private func setupConstraints() {
@@ -101,14 +119,12 @@ final class NoteViewController: UIViewController {
     }
     
     private func setupBars() {
-        let trashButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteAction))
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAction))
         
         let addImageButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addImageAction))
         let categoryButton = UIBarButtonItem(title: "Category", style: .plain, target: self, action: #selector(selectCategoryAction))
         
-        setToolbarItems([trashButton, addImageButton, categoryButton], animated: true)
+        setToolbarItems([addImageButton, categoryButton], animated: true)
     }
     
     @objc
@@ -119,5 +135,25 @@ final class NoteViewController: UIViewController {
     @objc
     private func selectCategoryAction() {
         print("Select Category Button Pressed")
+    }
+    
+    private func updateBarButtonItems() {
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAction))
+        navigationItem.rightBarButtonItem = saveButton
+        saveButton.isEnabled = viewModel?.hasChanges ?? false
+        
+        let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteAction))
+        
+        if viewModel?.isNewNote == true {
+            navigationItem.leftBarButtonItem = nil
+        } else {
+            navigationItem.leftBarButtonItem = deleteButton
+        }
+    }
+}
+
+extension NoteViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        updateBarButtonItems()
     }
 }
