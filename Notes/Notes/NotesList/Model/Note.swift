@@ -33,7 +33,6 @@ struct Note: TableViewItemProtocol {
     let date: Date
     let imageURL: URL?
     let category: NoteCategory
-    let image: Data? = nil
     
     var categoryColor: UIColor {
         return category.color

@@ -24,6 +24,7 @@
 		3837B60E2B59CE940070BE11 /* NoteEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B60C2B59CE940070BE11 /* NoteEntity+CoreDataProperties.swift */; };
 		3837B6112B59D1650070BE11 /* NotePersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B6102B59D1650070BE11 /* NotePersistent.swift */; };
 		3837B6152B59D57F0070BE11 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B6142B59D57F0070BE11 /* NoteViewModel.swift */; };
+		3837B61A2B5C65BE0070BE11 /* FileManagerPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3837B6192B5C65BD0070BE11 /* FileManagerPersistent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		3837B60C2B59CE940070BE11 /* NoteEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3837B6102B59D1650070BE11 /* NotePersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePersistent.swift; sourceTree = "<group>"; };
 		3837B6142B59D57F0070BE11 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		3837B6192B5C65BD0070BE11 /* FileManagerPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerPersistent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				3837B5C02B540FA80070BE11 /* AppDelegate.swift */,
 				3837B5F22B543B030070BE11 /* TableViewSection.swift */,
 				3837B6102B59D1650070BE11 /* NotePersistent.swift */,
+				3837B6192B5C65BD0070BE11 /* FileManagerPersistent.swift */,
 				3837B5FE2B547CC50070BE11 /* Note */,
 				3837B5ED2B54397B0070BE11 /* NotesList */,
 				3837B5F82B54417F0070BE11 /* Extensions */,
@@ -252,6 +255,7 @@
 				3837B6112B59D1650070BE11 /* NotePersistent.swift in Sources */,
 				3837B5E92B5439060070BE11 /* Note.swift in Sources */,
 				3837B5C52B540FA80070BE11 /* NotesListViewController.swift in Sources */,
+				3837B61A2B5C65BE0070BE11 /* FileManagerPersistent.swift in Sources */,
 				3837B5FC2B547C850070BE11 /* NoteViewController.swift in Sources */,
 				3837B5C12B540FA80070BE11 /* AppDelegate.swift in Sources */,
 				3837B5DA2B541A5A0070BE11 /* SimpleNoteTableViewCell.swift in Sources */,
