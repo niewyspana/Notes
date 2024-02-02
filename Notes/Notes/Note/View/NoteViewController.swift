@@ -27,6 +27,7 @@ final class NoteViewController: UIViewController {
         
         view.layer.cornerRadius = 10
         view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 1
         
         return view
     }()
@@ -66,14 +67,12 @@ final class NoteViewController: UIViewController {
     private func saveAction() {
         viewModel?.save(with: textView.text, and: attachmentView.image, imageName: imageName)
         navigationController?.popViewController(animated: true)
-        updateBarButtonItems()
     }
     
     @objc
     private func deleteAction() {
         viewModel?.delete()
         navigationController?.popViewController(animated: true)
-        updateBarButtonItems()
     }
     
     private func setupUI() {
@@ -85,8 +84,6 @@ final class NoteViewController: UIViewController {
         
         let recogniser = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(recogniser)
-        
-        textView.layer.borderWidth = textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? 1 : 0
         
         setupConstraints()
         setupBars()
@@ -153,10 +150,7 @@ final class NoteViewController: UIViewController {
     }
     
     private func updateBarButtonItems() {
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveAction))
-        navigationItem.rightBarButtonItem = saveButton
-        saveButton.isEnabled = viewModel?.hasChanges ?? false
-        
+        navigationItem.rightBarButtonItem?.isEnabled = viewModel?.text != textView.text
         let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteAction))
         
         if viewModel?.isNewNote == true {
